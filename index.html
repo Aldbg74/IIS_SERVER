@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Portail intranet de l'infrastructure SIO.Domaine" />
+  <title>SIO • Portail intranet</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a href="#accueil" class="brand" aria-label="Accueil intranet">
+        <span class="brand-mark">S<span class="brand-dot">.</span></span>
+        <span class="brand-name">SIO<span>DOMAINE</span><small>WORKSPACE / INTRANET</small></span>
+      </a>
+      <div class="sidebar-label">ESPACE DE TRAVAIL</div>
+      <nav class="side-nav" aria-label="Navigation principale">
+        <a class="nav-link active" href="#accueil" data-nav="accueil"><span class="ico">◫</span> Vue d'ensemble <span class="nav-trailing">01</span></a>
+        <a class="nav-link" href="#services" data-nav="services"><span class="ico">▦</span> Applications</a>
+        <a class="nav-link" href="#documentation" data-nav="documentation"><span class="ico">▤</span> Documentation</a>
+        <a class="nav-link" href="#annuaire" data-nav="annuaire"><span class="ico">♙</span> Annuaire</a>
+      </nav>
+      <div class="sidebar-label side-label-more">INFRASTRUCTURE</div>
+      <nav class="side-nav" aria-label="Raccourcis infrastructure">
+        <a class="nav-link external" href="#services"><span class="ico">⌘</span> Administration</a>
+        <a class="nav-link external" href="#documentation"><span class="ico">⌁</span> Procédures</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="lab-card"><div class="lab-card-head"><span class="pulse"></span> ENVIRONNEMENT LAB</div><div class="lab-card-title">SIO.Domaine</div><p>Portail interne de démonstration</p><span class="lab-version">v1.0.0</span></div>
+        <div class="side-footer">© 2026 · SIO INFRASTRUCTURE</div>
+      </div>
+    </aside>
+    <div class="main-column">
+      <header class="topbar">
+        <div class="topbar-left"><button id="menuToggle" class="icon-button mobile-menu" aria-label="Ouvrir le menu">☰</button><span class="breadcrumbs">Workspace <span>/</span> <strong id="currentPage">Vue d'ensemble</strong></span></div>
+        <div class="topbar-right"><span class="environment"><span class="pulse"></span> INTRANET</span><span id="topDate" class="top-date"></span><button id="themeToggle" class="icon-button theme-button" title="Changer le thème" aria-label="Changer le thème">☼</button><div class="avatar" title="Portail SIO">S</div></div>
+      </header>
+      <main>
+        <section class="view active" id="accueil" data-title="Vue d'ensemble">
+          <div class="hero"><div class="hero-content"><div class="eyebrow"><span class="eyebrow-line"></span> VOTRE ESPACE NUMÉRIQUE</div><h1>Bienvenue sur votre<br><span>espace de travail.</span></h1><p>Une interface. Tous vos outils. Accédez simplement aux ressources et services de l'infrastructure SIO.</p><a class="hero-cta" href="#services">Explorer les applications <span>↗</span></a></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div><div class="hero-core"><span>S/</span></div><div class="satellite sat-1"></div><div class="satellite sat-2"></div><div class="satellite sat-3"></div></div><div class="hero-grid"></div></div>
+          <div class="section-heading"><div><div class="section-kicker">WORKSPACE</div><h2>Accès rapide</h2></div><a href="#services" class="text-link">Toutes les applications <span>↗</span></a></div>
+          <div class="quick-grid" id="quickGrid"></div>
+          <div class="dashboard-grid">
+            <section class="panel status-panel"><div class="panel-head"><div><div class="section-kicker">INFRASTRUCTURE</div><h3>Services & ressources</h3></div><span class="tiny-tag">LIENS CONFIGURABLES</span></div><div class="service-status-list" id="statusList"></div><div class="panel-foot"><span class="info-dot">i</span> Les pastilles indiquent le type de service, pas sa disponibilité en temps réel.</div></section>
+            <section class="panel news-panel"><div class="panel-head"><div><div class="section-kicker">À LA UNE</div><h3>Informations internes</h3></div><span class="tiny-tag">SIO.DOMAINE</span></div><div class="notice-list"><article class="notice"><span class="notice-icon">✦</span><div><span class="notice-label">BIENVENUE</span><h4>Votre nouvel intranet est en ligne</h4><p>Retrouvez vos outils et la documentation au même endroit.</p></div></article><article class="notice"><span class="notice-icon alt">▤</span><div><span class="notice-label">DOCUMENTATION</span><h4>Centraliser les procédures IT</h4><p>Ajoutez vos guides AD, GPO, déploiement et exploitation.</p></div></article><article class="notice"><span class="notice-icon other">⌘</span><div><span class="notice-label">ADMINISTRATION</span><h4>Liens vers les consoles</h4><p>Personnalisez les URLs dans le fichier config.js.</p></div></article></div></section>
+          </div>
+          <div class="bottom-banner"><span>✧</span><div><strong>Un outil à ajouter ?</strong><p>Le portail est entièrement personnalisable via un simple fichier de configuration.</p></div><a href="#documentation">Voir le guide ↗</a></div>
+        </section>
+        <section class="view" id="services" data-title="Applications"><div class="page-eyebrow">RESSOURCES / 01</div><div class="page-heading"><div><h1>Applications<span class="period">.</span></h1><p>Vos services et consoles d'administration, au même endroit.</p></div><div class="count-pill" id="appCount">0 SERVICES</div></div><div class="filter-row"><label class="search-wrap"><span>⌕</span><input id="serviceSearch" type="search" placeholder="Rechercher une application..." autocomplete="off" aria-label="Rechercher une application"></label><div class="filter-buttons" id="categoryFilters"></div></div><div class="app-grid" id="allApps"></div><p class="empty-message" id="emptyApps" hidden>Aucune application ne correspond à votre recherche.</p></section>
+        <section class="view" id="documentation" data-title="Documentation"><div class="page-eyebrow">RESSOURCES / 02</div><div class="page-heading"><div><h1>Documentation<span class="period">.</span></h1><p>Procédures, guides et informations utiles pour l'équipe IT.</p></div></div><div class="doc-grid" id="docGrid"></div><div class="guide-box"><div class="section-kicker">ADMINISTRATEUR</div><h3>Personnaliser l'intranet</h3><p>Modifiez <code>assets/config.js</code> pour définir les URL réelles, les cartes et les contacts. Vous pouvez également ajouter des documents PDF dans le dossier <code>docs/</code> et y faire pointer les entrées de configuration.</p><p class="guide-note">La page est statique : aucun mot de passe, aucune connexion LDAP ou statut de serveur ne sont collectés par ce site.</p></div></section>
+        <section class="view" id="annuaire" data-title="Annuaire"><div class="page-eyebrow">RESSOURCES / 03</div><div class="page-heading"><div><h1>Annuaire<span class="period">.</span></h1><p>Les contacts utiles de votre infrastructure.</p></div></div><div class="directory-list" id="directoryList"></div><div class="guide-box"><div class="section-kicker">À SAVOIR</div><h3>Annuaire de démonstration</h3><p>Ces entrées sont des rôles de service, pas une synchronisation Active Directory. Renseignez uniquement les contacts que vous souhaitez afficher dans <code>assets/config.js</code>.</p></div></section>
+      </main>
+      <footer class="site-footer"><span>© 2026 SIO.DOMAINE <span class="footer-divider">/</span> INTRANET</span><span>CONSTRUIT POUR VOTRE INFRASTRUCTURE <span class="footer-spark">✳</span></span></footer>
+    </div>
+  </div>
+</body>
+</html>
